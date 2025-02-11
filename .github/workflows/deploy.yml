@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: actions/deploy-pages@v2
         with:
           branch: gh-pages  # Deploy to gh-pages branch
           folder: dist  # The output folder after React build
