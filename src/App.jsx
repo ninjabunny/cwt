@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { candyWrapper } from "../CandyWrapper";
 const url = "https://pokeapi.co/api/v2/pokemon/ditto";
 
 function App() {
@@ -18,11 +17,10 @@ function App() {
     getData().then((json) => setData(json));
   }, []);
   console.log(data);
-  const RedDivWithCandy = () => candyWrapper(<div>{JSON.stringify(data)}</div>);
+
   return (
     <>
       <div>
-        <RedDivWithCandy />
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
