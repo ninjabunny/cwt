@@ -6,6 +6,7 @@ on:
       - main  # Runs on pushes to the main branch
 
 permissions:
+  id-token: write
   contents: write  # Grants permission to push changes
 
 jobs:
