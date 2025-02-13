@@ -28,12 +28,14 @@ function App() {
   return (
     <>
       <h1>Cross Screen Media POC</h1>
+      <br></br>
       <div
         style={{
           height: "400px",
           width: "1200px",
         }}
       >
+        <h1>Complex Tables Demo</h1>
         <GridExample />
       </div>
       <InputRefsDemo ref={inputRefs} />
