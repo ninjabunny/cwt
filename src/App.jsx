@@ -1,13 +1,16 @@
-import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useState, useEffect, useRef } from "react";
 import GridExample from "./Grid";
 import "./App.css";
+import InputRefsDemo from "./InputsRefDemo";
 const url = "https://pokeapi.co/api/v2/pokemon/ditto";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [data, setData] = useState({});
+  const inputRefs = useRef([]);
+
+  useEffect(() => {
+    inputRefs.current.getRefs().current[1].focus();
+  }, []);
 
   useEffect(() => {
     const getData = async () => {
@@ -23,13 +26,14 @@ function App() {
     <>
       <h1>Cross Screen Media POC</h1>
       <div
-        className="ag-theme-alpine"
         style={{
           height: "400px",
+          width: "1200px",
         }}
       >
         <GridExample />
       </div>
+      <InputRefsDemo ref={inputRefs} />
     </>
   );
 }
