@@ -137,7 +137,7 @@ const GridExample = () => {
 
   // Container: Defines the grid's theme & dimensions.
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div style={{ height: "500px", width: "1200px" }}>
       <AgGridReact
         rowData={rowData}
         columnDefs={colDefs}

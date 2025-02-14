@@ -2,7 +2,7 @@
 import { useImperativeHandle, forwardRef, useRef } from "react";
 
 const InputRefsDemo = forwardRef((props, ref) => {
-  const privateData = "heres some private data";
+  const privateData = "private data";
   const childRefs = useRef([]);
 
   useImperativeHandle(ref, () => ({
@@ -12,9 +12,8 @@ const InputRefsDemo = forwardRef((props, ref) => {
 
   return (
     <div>
-      <h2>useImperativeHandle Demo</h2>
       <input ref={(el) => (childRefs.current[0] = el)} type="text" />
-      <input ref={(el) => (childRefs.current[1] = el)} type="text" />
+      <input value={32} ref={(el) => (childRefs.current[1] = el)} type="text" />
     </div>
   );
 });
